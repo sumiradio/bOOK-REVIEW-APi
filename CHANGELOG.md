@@ -20,4 +20,16 @@
 * sequelize update to 5.2.15 from 4.38.0
 * socket.io update to 2.2.0 from 2.1.0
 
-### DevDepen
+### DevDependencies
+
+* axios-mock-adatper update to 1.16.0 from 1.15.0
+* babel-eslint update to 10.0.1 from 8.2.6
+* chai update to 4.2.0 from 3.5.0
+* enzyme update to 3.9.0 from 3.0.0
+* enzyme-adapter-react-16 update to 1.12.1 from 1.0.0
+* eslint update to 5.16.0 from 4.19.1
+* eslint-config-fullstack update to 6.0.0 from 5.1.0
+* eslint-config-prettier update to 4.1.0 from 2.9.0
+* husky update to 1.3.1 from 0.14.3
+* lint-staged update to 8.1.5 from 7.2.0
+* mocha update to 6.1.2 f
