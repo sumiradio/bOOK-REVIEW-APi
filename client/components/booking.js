@@ -18,4 +18,26 @@ export class Booking extends Component {
       bookings.filter(booking => booking.menteeId === userId)
     ) {
       history = bookings.filter(
-        booking => booking.mentorId === userId || boo
+        booking => booking.mentorId === userId || booking.menteeId === userId
+      )
+    }
+    return (
+      <div id="booking-view">
+        <h1>Meeting History:</h1>
+        {history.map(book => (
+          <div key={book.id}>
+            <h2>Connection Date: {book.dateConnection}</h2>
+            <h2>Booking Notes: {book.notes}</h2>
+            <br />
+          </div>
+        ))}
+      </div>
+    )
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    loading: state.bookingReducer.loading,
+    bookings: state.bookingReducer.bookings,
+    userId: st
