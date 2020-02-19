@@ -5,4 +5,12 @@ import Routes from './routes'
 
 const App = () => {
   return (
-    <d
+    <div>
+      <NavbarMenu />
+      <Routes />
+      <FooterBar />
+    </div>
+  )
+}
+
+export default App
