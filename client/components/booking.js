@@ -40,4 +40,14 @@ const mapStateToProps = state => {
   return {
     loading: state.bookingReducer.loading,
     bookings: state.bookingReducer.bookings,
-    userId: st
+    userId: state.userReducer.user.id
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchBookings: () => dispatch(fetchBookings())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Booking)
