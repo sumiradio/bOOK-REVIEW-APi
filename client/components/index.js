@@ -10,4 +10,7 @@ export {Login, Signup} from './auth-form'
 export {default as Dashboard} from './dashboard'
 export {default as Booking} from './booking'
 export {default as Search} from './search'
-export {default as Welcome} from 
+export {default as Welcome} from './welcome'
+export {default as FooterBar} from './footer'
+export {default as About} from './about'
+export {default as AboutHome} from './about-home'
