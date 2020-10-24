@@ -26,4 +26,17 @@ class NavbarMenu extends Component {
           </Navbar.Brand>
         </a>
 
-        <div className="Nav_mobile"
+        <div className="Nav_mobile">
+          <Icon className="close" onClick={this.navToggleClick}>
+            {' '}
+            <span className="rbc rbc-bars" />
+          </Icon>
+          {this.state.active ? (
+            isLoggedIn ? (
+              <div>
+                <div className="sidenav">
+                  <Icon className="close" onClick={this.navToggleClick}>
+                    {' '}
+                    <span>X</span>
+                  </Icon>
+                  <Link to="/home" onClick={this.navToggleC
