@@ -52,4 +52,23 @@ class NavbarMenu extends Component {
                     About
                   </Link>
                   <Link to="" onClick={handleClick}>
-                    
+                    Logout
+                  </Link>
+                </div>
+              </div>
+            ) : (
+              <div className="sidenav">
+                <div className="btnSideNav">
+                  <Login />
+                </div>
+                <Icon className="close" onClick={this.navToggleClick}>
+                  {' '}
+                  <span>X</span>
+                </Icon>
+              </div>
+            )
+          ) : null}
+        </div>
+
+        {isLoggedIn ? (
+          <Navbar.
