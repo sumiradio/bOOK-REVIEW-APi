@@ -39,4 +39,17 @@ class NavbarMenu extends Component {
                     {' '}
                     <span>X</span>
                   </Icon>
-                  <Link to="/home" onClick={this.navToggleC
+                  <Link to="/home" onClick={this.navToggleClick}>
+                    Home
+                  </Link>
+                  <Link to="/profile" onClick={this.navToggleClick}>
+                    Profile
+                  </Link>
+                  <Link to="/search" onClick={this.navToggleClick}>
+                    Search
+                  </Link>
+                  <Link to="/about" onClick={this.navToggleClick}>
+                    About
+                  </Link>
+                  <Link to="" onClick={handleClick}>
+                    
