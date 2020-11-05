@@ -108,4 +108,21 @@ class NavbarMenu extends Component {
                 renderAs={Link}
                 className="is-text"
                 size="medium"
-              
+                style={{textDecoration: 'none'}}
+              >
+                About
+              </Button>
+            </Navbar.Container>
+
+            <Navbar.Container position="end">
+              <Navbar.Item style={{height: '100px'}} backgroundColor="warning">
+                <Button
+                  onClick={handleClick}
+                  color="dark"
+                  size="medium"
+                  className="button"
+                >
+                  Logout
+                </Button>
+              </Navbar.Item>
+            </Navbar.Container>
