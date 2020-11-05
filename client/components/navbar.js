@@ -88,4 +88,24 @@ class NavbarMenu extends Component {
                 renderAs={Link}
                 className="is-text"
                 size="medium"
-                style={{te
+                style={{textDecoration: 'none'}}
+              >
+                Profile
+              </Button>
+
+              <Button
+                to="/search"
+                renderAs={Link}
+                className="is-text"
+                size="medium"
+                style={{textDecoration: 'none'}}
+              >
+                Search
+              </Button>
+
+              <Button
+                to="/about"
+                renderAs={Link}
+                className="is-text"
+                size="medium"
+              
