@@ -71,4 +71,21 @@ class NavbarMenu extends Component {
         </div>
 
         {isLoggedIn ? (
-          <Navbar.
+          <Navbar.Menu>
+            <Navbar.Container className="NavMargins">
+              <Button
+                to="/home"
+                renderAs={Link}
+                className="is-text"
+                size="medium"
+                style={{textDecoration: 'none'}}
+              >
+                Home
+              </Button>
+
+              <Button
+                to="/profile"
+                renderAs={Link}
+                className="is-text"
+                size="medium"
+                style={{te
