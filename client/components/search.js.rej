@@ -1,1 +1,12 @@
-diff a/client/components/search.js b/client/compon
+diff a/client/components/search.js b/client/components/search.js	(rejected hunks)
+@@ -71,24 +70,25 @@ export class Search extends Component {
+-                <div className="field">
+-                  <div className="control">
+-                    <div className="select is-info">
+-                      <select
+-                        onChange={this.handleChange}
+-                        id="selectedSkillId"
+-                        required
+-                        className="flex-containee"
+-                      >
+-                        
