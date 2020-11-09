@@ -126,3 +126,37 @@ class NavbarMenu extends Component {
                 </Button>
               </Navbar.Item>
             </Navbar.Container>
+          </Navbar.Menu>
+        ) : (
+          <Navbar.Menu>
+            <Navbar.Container position="end" className="NavMargins">
+              <Login />
+            </Navbar.Container>
+          </Navbar.Menu>
+        )}
+      </Navbar>
+    )
+  }
+}
+
+/**
+ * CONTAINER
+ */
+const mapState = state => {
+  return {
+    isLoggedIn: !!state.user.id
+  }
+}
+
+const mapDispatch = dispatch => {
+  return {
+    handleClick() {
+      dispatch(logout())
+    }
+  }
+}
+
+export default connect(mapState, mapDispatch)(NavbarMenu)
+
+/**
+ * PROP TYPES
