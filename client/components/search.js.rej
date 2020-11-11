@@ -40,4 +40,12 @@ diff a/client/components/search.js b/client/components/search.js	(rejected hunks
 +                            ? this.props.allSkills.map(curSkill => (
 +                                <option
 +                                  key={curSkill.id}
-+                            
++                                  value={curSkill.id}
++                                  className="flex-containee"
++                                >
++                                  {curSkill.name}
++                                </option>
++                              ))
++                            : null}
++                        </select>
++                      </div>
