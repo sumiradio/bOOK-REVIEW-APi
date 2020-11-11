@@ -18,4 +18,16 @@ diff a/client/components/search.js b/client/components/search.js	(rejected hunks
 -                                key={curSkill.id}
 -                                value={curSkill.id}
 -                                className="flex-containee"
--                
+-                              >
+-                                {curSkill.name}
+-                              </option>
+-                            ))
+-                          : null}
+-                      </select>
++                  <div className="field">
++                    <div className="control">
++                      <div className="select is-info">
++                        <select
++                          onChange={this.handleChange}
++                          id="selectedSkillId"
++                      
