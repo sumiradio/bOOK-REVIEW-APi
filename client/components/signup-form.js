@@ -23,4 +23,17 @@ const AuthForm = props => {
 
         <div>
           <label htmlFor="skill">
-     
+            <small>What skill are you interested in?</small>
+          </label>
+          <input type="checkbox" name="skills" value="leadership" /> Leadership
+          <input type="checkbox" name="skills" value="strategy" /> Strategy
+          <input type="checkbox" name="skills" value="sales" /> Sales
+        </div>
+
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+        {error && error.response && <div> {error.response.data} </div>}
+      </form>
+
+      {/* <a href="/auth/g
