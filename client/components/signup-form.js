@@ -36,4 +36,18 @@ const AuthForm = props => {
         {error && error.response && <div> {error.response.data} </div>}
       </form>
 
-      {/* <a href="/auth/g
+      {/* <a href="/auth/google">{displayName} with Google</a> */}
+      <Link to="/auth/google">{displayName} with Google</Link>
+    </div>
+  )
+}
+
+/**
+ * CONTAINER
+ *   Note that we have two different sets of 'mapStateToProps' functions -
+ *   one for Login, and one for Signup. However, they share the same 'mapDispatchToProps'
+ *   function, and share the same Component. This is a good example of how we
+ *   can stay DRY with interfaces that are very similar to each other!
+ */
+
+const mapSi
