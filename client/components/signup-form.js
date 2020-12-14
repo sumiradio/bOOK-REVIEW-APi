@@ -50,4 +50,26 @@ const AuthForm = props => {
  *   can stay DRY with interfaces that are very similar to each other!
  */
 
-const mapSi
+const mapSignup = state => {
+  return {
+    name: 'signup',
+    displayName: 'Sign Up',
+    error: state.user.error
+  }
+}
+
+const mapDispatch = dispatch => {
+  return {
+    handleSubmit(evt) {
+      evt.preventDefault()
+      const mentorOrMentee = evt.target.mentorMentee.value
+      const skills = [...document.getElementsByName('skills')].reduce(
+        (accum, el) => {
+          if (el.checked) {
+            accum.push(el.value)
+          }
+          return accum
+        },
+        []
+      )
+      dispatch(signup(mentorOrMe
