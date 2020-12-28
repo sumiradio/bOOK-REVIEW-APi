@@ -72,4 +72,19 @@ const mapDispatch = dispatch => {
         },
         []
       )
-      dispatch(signup(mentorOrMe
+      dispatch(signup(mentorOrMentee, skills))
+    }
+  }
+}
+
+export const Signup = connect(mapSignup, mapDispatch)(AuthForm)
+
+/**
+ * PROP TYPES
+ */
+AuthForm.propTypes = {
+  name: PropTypes.string.isRequired,
+  displayName: PropTypes.string.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  error: PropTypes.object
+}
