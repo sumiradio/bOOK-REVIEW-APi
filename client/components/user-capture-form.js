@@ -24,4 +24,23 @@ class UserCaptureForm extends React.Component {
   }
 
   async componentDidMount() {
-    const {data} = await axios.get('/
+    const {data} = await axios.get('/api/skills')
+    this.setState({skills: data})
+  }
+
+  handleSubmit = evt => {
+    evt.preventDefault()
+    this.props.updateUser(this.props.user.id, this.state.form)
+    history.push('/profile')
+  }
+
+  handleChange = evt => {
+    if (
+      evt.target.name === 'skillsInterestedIn' ||
+      evt.target.name === 'currentSkills'
+    ) {
+      const skillArr = this.state.form[evt.target.name]
+      if (evt.target.checked) {
+        skillArr.push(evt.target.id)
+        this.setState({
+          form: {...this.st
