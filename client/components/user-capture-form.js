@@ -43,4 +43,22 @@ class UserCaptureForm extends React.Component {
       if (evt.target.checked) {
         skillArr.push(evt.target.id)
         this.setState({
-          form: {...this.st
+          form: {...this.state.form, [evt.target.name]: [...skillArr]}
+        })
+      } else {
+        const removeArr = skillArr.filter(el => el !== evt.target.value)
+        this.setState({
+          form: {...this.state.form, [evt.target.name]: [...removeArr]}
+        })
+      }
+    } else {
+      this.setState({
+        form: {...this.state.form, [evt.target.name]: evt.target.value}
+      })
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.handle
