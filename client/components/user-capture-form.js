@@ -71,4 +71,17 @@ class UserCaptureForm extends React.Component {
                   <div className="controlRadio">
                     <input type="radio" name="gender" value="Female" /> Female
                     <input type="radio" name="gender" value="Male" /> Male
-                    <input typ
+                    <input type="radio" name="gender" value="Non-binary" />
+                    Non-binary
+                    <input type="radio" name="gender" value="Other" /> Other
+                  </div>
+                </div>
+
+                <div htmlFor="status">
+                  <label>Enter Your Current Company</label>
+                  <div className="control">
+                    <input
+                      type="text"
+                      name="currentCompany"
+                      placeholder="Current Company"
+ 
