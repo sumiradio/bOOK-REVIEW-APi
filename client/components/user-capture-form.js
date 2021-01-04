@@ -61,4 +61,14 @@ class UserCaptureForm extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handle
+        <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
+          <Columns>
+            <Columns.Column size={6}>
+              <div className="form-content">
+                <div htmlFor="status">
+                  <label className="question">Please Select Your Gender</label>
+
+                  <div className="controlRadio">
+                    <input type="radio" name="gender" value="Female" /> Female
+                    <input type="radio" name="gender" value="Male" /> Male
+                    <input typ
