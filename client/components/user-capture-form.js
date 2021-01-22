@@ -112,4 +112,18 @@ class UserCaptureForm extends React.Component {
                         />
                       </div>
                       <div>
-                        Don't
+                        Don't Have a Calendly Account?{' '}
+                        <a
+                          href="https://calendly.com/signup"
+                          alt="Calendly Sign Up"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Sign Up For Free!
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <di
