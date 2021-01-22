@@ -84,4 +84,19 @@ class UserCaptureForm extends React.Component {
                       type="text"
                       name="currentCompany"
                       placeholder="Current Company"
- 
+                    />
+                  </div>
+                </div>
+
+                <div htmlFor="status">
+                  <label>Enter Your Current Position</label>
+                  <div className="control">
+                    <input
+                      type="text"
+                      name="currentPosition"
+                      placeholder="Current Position"
+                    />
+                  </div>
+                </div>
+
+                <div className="field" htmlFor="status
