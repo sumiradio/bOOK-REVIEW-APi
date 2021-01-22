@@ -99,4 +99,17 @@ class UserCaptureForm extends React.Component {
                   </div>
                 </div>
 
-                <div className="field" htmlFor="status
+                <div className="field" htmlFor="status">
+                  <label>Enter Your Calendly Username: (Optional)</label>
+                  <div className="control">
+                    <div className="small">
+                      <div>
+                        {'https://calendly.com/ '}
+                        <input
+                          type="text"
+                          name="calendlyUsername"
+                          placeholder="USERNAME"
+                        />
+                      </div>
+                      <div>
+                        Don't
