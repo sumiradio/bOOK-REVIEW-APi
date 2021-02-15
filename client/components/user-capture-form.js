@@ -159,4 +159,21 @@ class UserCaptureForm extends React.Component {
                       <SkillsListName skills={this.state.skills} />{' '}
                     </td>
                   ) : (
-                    fa
+                    false
+                  )}
+
+                  {this.state.skills.length ? (
+                    <td>
+                      <SkillsListBox
+                        skills={this.state.skills}
+                        skillType="skillsInterestedIn"
+                      />
+                    </td>
+                  ) : (
+                    false
+                  )}
+
+                  {this.state.skills.length ? (
+                    <td>
+                      <SkillsListBox
+                        s
