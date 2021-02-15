@@ -142,4 +142,21 @@ class UserCaptureForm extends React.Component {
             </Columns.Column>
 
             <Columns.Column className="skills">
-              <label>Select your Ski
+              <label>Select your Skills</label>
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>Skills</th>
+                    <th>I am interesting in</th>
+                    <th>My Skills</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.state.skills.length ? (
+                    <td>
+                      {' '}
+                      <SkillsListName skills={this.state.skills} />{' '}
+                    </td>
+                  ) : (
+                    fa
