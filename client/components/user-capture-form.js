@@ -126,4 +126,20 @@ class UserCaptureForm extends React.Component {
                   </div>
                 </div>
 
-                <di
+                <div htmlFor="status">
+                  <div>
+                    <label>Enter Your Bio</label>
+                    <div className="control">
+                      <textarea
+                        type="text"
+                        name="bio"
+                        placeholder="Tell us about yourself."
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Columns.Column>
+
+            <Columns.Column className="skills">
+              <label>Select your Ski
