@@ -33,3 +33,16 @@ const mapState = state => {
   return {
     firstName: state.user.firstName,
     email: state.user.email,
+    hasCompletedSignup: state.user.hasCompletedSignup
+  }
+}
+
+export default connect(mapState)(UserHome)
+
+/**
+ * PROP TYPES
+ */
+UserHome.propTypes = {
+  firstName: PropTypes.string,
+  email: PropTypes.string
+}
