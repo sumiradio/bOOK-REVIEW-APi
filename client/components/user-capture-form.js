@@ -193,4 +193,29 @@ class UserCaptureForm extends React.Component {
                       className="button learn-buttons is-danger"
                       type="submit"
                     >
-               
+                      Submit
+                    </button>
+                  </p>
+                </div>
+              </Columns>
+            </Columns.Column>
+          </Columns>
+        </form>
+      </div>
+    )
+  }
+}
+
+const mapState = state => {
+  return {
+    user: state.user
+  }
+}
+
+const mapDispatch = dispatch => {
+  return {
+    updateUser: (userId, formData) => dispatch(updateUser(userId, formData))
+  }
+}
+
+export default connect(mapState, mapDispatch)(UserCaptureForm)
