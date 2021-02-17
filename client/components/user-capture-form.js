@@ -176,4 +176,21 @@ class UserCaptureForm extends React.Component {
                   {this.state.skills.length ? (
                     <td>
                       <SkillsListBox
-                        s
+                        skills={this.state.skills}
+                        skillType="currentSkills"
+                      />
+                    </td>
+                  ) : (
+                    false
+                  )}
+                </tbody>
+              </table>
+
+              <Columns>
+                <div className="field is-grouped">
+                  <p className="control">
+                    <button
+                      className="button learn-buttons is-danger"
+                      type="submit"
+                    >
+               
