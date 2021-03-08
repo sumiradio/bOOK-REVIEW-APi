@@ -34,4 +34,13 @@ const Welcome = () => {
           </div>
           <div className="column">
             <Heading size={5}>
-              How can we close the gender
+              How can we close the gender gap for women in tech?
+            </Heading>
+            Elevate provides a space where C-level executives can search for
+            female coworkers by skills and offer them mentorship. This will
+            enable more females to rise into C-level positions
+            <p>
+              <a
+                href="https://www.mckinsey.com/industries/high-tech/our-insights/closing-the-tech-gender-gap-through-philanthropy-and-corporate-social-responsibility"
+                target="_blank"
+                rel="noopener n
