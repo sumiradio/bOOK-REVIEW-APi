@@ -43,4 +43,17 @@ const Welcome = () => {
               <a
                 href="https://www.mckinsey.com/industries/high-tech/our-insights/closing-the-tech-gender-gap-through-philanthropy-and-corporate-social-responsibility"
                 target="_blank"
-                rel="noopener n
+                rel="noopener noreferrer"
+                className="button learn-buttons is-danger"
+              >
+                Learn more
+              </a>
+            </p>
+          </div>
+          <div className="column">
+            <Heading size={5}>
+              User Friendly, Gmail Signup, Calendly Invites, Notifications
+            </Heading>
+            Connect with a mentor in three clicks; Signup/login with your Gmail
+            account; Receive calendar invite when your ready to meet; Get
+            notified in real time when someone is interested in
