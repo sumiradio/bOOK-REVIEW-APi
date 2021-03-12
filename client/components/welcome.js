@@ -56,4 +56,28 @@ const Welcome = () => {
             </Heading>
             Connect with a mentor in three clicks; Signup/login with your Gmail
             account; Receive calendar invite when your ready to meet; Get
-            notified in real time when someone is interested in
+            notified in real time when someone is interested in meeting you
+            <p>
+              <a
+                href="https://calendly.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button learn-buttons is-danger"
+              >
+                Learn more
+              </a>
+            </p>
+          </div>
+        </div>
+      </Hero.Body>
+
+      <AboutHome />
+
+      <Hero.Footer>
+        <footer className="footer" />
+      </Hero.Footer>
+    </Hero>
+  )
+}
+
+export default Welcome
