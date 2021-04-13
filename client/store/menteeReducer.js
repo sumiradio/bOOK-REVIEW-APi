@@ -1,0 +1,5 @@
+import axios from 'axios'
+
+const GETTING_MENTEES = 'GETTING_MENTEES '
+const GOT_MENTEES = 'GOT_MENTEES'
+const GETTING_ONE_MENTEE = 'GETTIN

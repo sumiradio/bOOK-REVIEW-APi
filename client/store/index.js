@@ -17,4 +17,17 @@ const reducer = combineReducers({
   // menteeReducer,
   bookingReducer,
   skillsReducer
-}
+})
+
+const middleware = composeWithDevTools(
+  applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
+)
+const store = createStore(reducer, middleware)
+
+export default store
+export * from './user'
+export * from './profiles'
+// export * from './mentorReducer'
+// export * from './menteeReducer'
+export * from './bookingReducer'
+export * from './skillsListReducer'
