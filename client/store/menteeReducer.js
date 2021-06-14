@@ -26,4 +26,34 @@ const gettingOneMentee = () => ({
 
 const gotOneMentee = mentee => ({
   type: GOT_ONE_MENTEE,
-  me
+  mentee
+})
+
+const removeMentee = menteeId => ({
+  type: REMOVE_MENTEE,
+  menteeId
+})
+
+const updateMentee = mentee => ({
+  type: UPDATE_MENTEE,
+  mentee
+})
+
+const createMentee = mentee => ({
+  type: CREATE_MENTEE,
+  mentee
+})
+
+const gettingMenteesSkill = () => ({
+  type: GETTING_MENTEES_SKILL
+})
+
+const gotMenteesBySkill = menteesSkill => ({
+  type: GOT_MENTEES_BY_SKILL,
+  menteesSkill
+})
+
+export const fetchMentees = () => {
+  return async dispatch => {
+    dispatch(gettingMentees())
+    const response = await a
