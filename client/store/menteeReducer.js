@@ -56,4 +56,21 @@ const gotMenteesBySkill = menteesSkill => ({
 export const fetchMentees = () => {
   return async dispatch => {
     dispatch(gettingMentees())
-    const response = await a
+    const response = await axios.get('/api/mentees')
+    dispatch(gotMentees(response.data))
+  }
+}
+
+export const fetchMenteesSkill = skillId => {
+  return async dispatch => {
+    dispatch(gettingMenteesSkill())
+    const response = await axios.get(`/api/mentees/skill/${skillId}`)
+    dispatch(gotMenteesBySkill(response.data))
+  }
+}
+
+export const fetchMentee = menteeId => {
+  return async dispatch => {
+    dispatch(gettingOneMentee())
+    const response = await axios.get(`/api/mentees/${menteeId}`)
+    dis
