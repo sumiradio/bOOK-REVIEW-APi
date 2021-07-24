@@ -91,4 +91,25 @@ export const putMentee = (menteeId, mentee) => {
 }
 
 export const addMentee = mentee => {
-  return async dispatch =>
+  return async dispatch => {
+    const response = await axios.post('/api/mentees', mentee)
+    dispatch(createMentee(response.data))
+  }
+}
+
+const initialState = {
+  loading: false,
+  mentees: [],
+  mentee: {}
+}
+
+const menteeReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case GETTING_MENTEES:
+      return {...state, loading: true}
+    case GOT_MENTEES:
+      return {...state, loading: false, mentees: action.mentees}
+    case GETTING_ONE_MENTEE:
+      return {...state, loading: true}
+    case GOT_ONE_MENTEE:
+      return {...stat
