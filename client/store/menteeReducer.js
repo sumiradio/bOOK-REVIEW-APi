@@ -73,4 +73,22 @@ export const fetchMentee = menteeId => {
   return async dispatch => {
     dispatch(gettingOneMentee())
     const response = await axios.get(`/api/mentees/${menteeId}`)
-    dis
+    dispatch(gotOneMentee(response.data))
+  }
+}
+
+export const deleteMentee = menteeId => {
+  return async dispatch => {
+    await axios.delete(`/api/mentees/${menteeId}`)
+    dispatch(removeMentee(menteeId))
+  }
+}
+export const putMentee = (menteeId, mentee) => {
+  return async dispatch => {
+    const response = await axios.put(`/api/mentees/${menteeId}`, mentee)
+    dispatch(updateMentee(response.data))
+  }
+}
+
+export const addMentee = mentee => {
+  return async dispatch =>
