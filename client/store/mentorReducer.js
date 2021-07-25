@@ -71,4 +71,24 @@ export const putMentor = (mentorId, mentor) => {
 }
 
 export const addMentor = mentor => {
-  return async dispatch
+  return async dispatch => {
+    const response = await axios.post('/api/mentors', mentor)
+    dispatch(createMentor(response.data))
+  }
+}
+
+const initialState = {
+  loading: false,
+  mentors: [],
+  mentor: {}
+}
+
+const mentorReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case GETTING_MENTORS:
+      return {...state, loading: true}
+    case GOT_MENTORS:
+      return {...state, loading: false, mentors: action.mentors}
+    case GETTING_ONE_MENTOR:
+      return {...state, loading: true}
+    case GOT_ONE_MENTOR:
