@@ -112,4 +112,19 @@ const menteeReducer = (state = initialState, action) => {
     case GETTING_ONE_MENTEE:
       return {...state, loading: true}
     case GOT_ONE_MENTEE:
-      return {...stat
+      return {...state, loading: false, mentee: action.mentee}
+    case REMOVE_MENTEE:
+      return {
+        ...state,
+        mentees: state.mentees.filter(mentee => mentee.id !== action.menteeId)
+      }
+    case UPDATE_MENTEE:
+      return {...state, mentee: action.mentee}
+    case CREATE_MENTEE:
+      return {...state, mentees: [...state.mentees, action.mentee]}
+    default:
+      return state
+  }
+}
+
+export default menteeReducer
