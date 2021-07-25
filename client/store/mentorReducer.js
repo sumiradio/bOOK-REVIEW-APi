@@ -52,4 +52,23 @@ export const fetchMentors = () => {
 export const fetchMentor = mentorId => {
   return async dispatch => {
     dispatch(gettingOneMentor())
-    const response = await axio
+    const response = await axios.get(`/api/mentors/${mentorId}`)
+    dispatch(gotOneMentor(response.data))
+  }
+}
+
+export const deleteMentor = mentorId => {
+  return async dispatch => {
+    await axios.delete(`/api/mentors/${mentorId}`)
+    dispatch(removeMentor(mentorId))
+  }
+}
+export const putMentor = (mentorId, mentor) => {
+  return async dispatch => {
+    const response = await axios.put(`/api/mentors/${mentorId}`, mentor)
+    dispatch(updateMentor(response.data))
+  }
+}
+
+export const addMentor = mentor => {
+  return async dispatch
