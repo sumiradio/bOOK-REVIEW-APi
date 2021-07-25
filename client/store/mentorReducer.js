@@ -24,3 +24,32 @@ const gettingOneMentor = () => ({
 const gotOneMentor = mentor => ({
   type: GOT_ONE_MENTOR,
   mentor
+})
+
+const removeMentor = mentorId => ({
+  type: REMOVE_MENTOR,
+  mentorId
+})
+
+const updateMentor = mentor => ({
+  type: UPDATE_MENTOR,
+  mentor
+})
+
+const createMentor = mentor => ({
+  type: CREATE_MENTOR,
+  mentor
+})
+
+export const fetchMentors = () => {
+  return async dispatch => {
+    dispatch(gettingMentors())
+    const response = await axios.get('/api/mentors')
+    dispatch(gotMentors(response.data))
+  }
+}
+
+export const fetchMentor = mentorId => {
+  return async dispatch => {
+    dispatch(gettingOneMentor())
+    const response = await axio
