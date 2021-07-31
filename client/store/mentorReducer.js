@@ -92,3 +92,19 @@ const mentorReducer = (state = initialState, action) => {
     case GETTING_ONE_MENTOR:
       return {...state, loading: true}
     case GOT_ONE_MENTOR:
+      return {...state, loading: false, mentor: action.mentor}
+    case REMOVE_MENTOR:
+      return {
+        ...state,
+        mentors: state.mentors.filter(mentor => mentor.id !== action.mentorsId)
+      }
+    case UPDATE_MENTOR:
+      return {...state, mentor: action.mentor}
+    case CREATE_MENTOR:
+      return {...state, mentor: [...state.mentors, action.mentor]}
+    default:
+      return state
+  }
+}
+
+export default mentorReducer
