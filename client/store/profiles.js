@@ -65,4 +65,19 @@ const initialState = {
   profile: {}
 }
 
-const 
+const profileReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case GETTING_PROFILES:
+      return {...state, loading: true}
+    case GOT_PROFILES:
+      return {...state, loading: false, profiles: action.usersProfiles}
+    case GETTING_PROFILE:
+      return {...state, loading: true}
+    case GOT_PROFILE:
+      return {...state, loading: false, profile: action.userProfile}
+    default:
+      return state
+  }
+}
+
+export default profileReducer
