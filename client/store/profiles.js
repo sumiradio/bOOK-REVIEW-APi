@@ -38,4 +38,31 @@ const gotProfile = userProfile => ({
 export const fetchProfiles = () => {
   return async dispatch => {
     try {
-      dispatch(gettin
+      dispatch(gettingProfiles())
+      const {data} = await axios.get('/api/users')
+      dispatch(gotProfiles(data))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
+export const fetchOneProfile = userId => {
+  return async dispatch => {
+    try {
+      dispatch(gettingProfile())
+      const {data} = await axios.get(`/api/users/${userId}`)
+      dispatch(gotProfile(data))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
+const initialState = {
+  loading: false,
+  profiles: [],
+  profile: {}
+}
+
+const 
