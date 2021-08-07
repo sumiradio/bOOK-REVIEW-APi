@@ -22,4 +22,22 @@ const gotSkillsUserWantsActionCreator = skillsWants => ({
 
 //THUNK CREATORS//
 
-export const getSkillsThunkCrea
+export const getSkillsThunkCreator = () => async dispatch => {
+  try {
+    const {data} = await axios.get('/api/skills')
+    dispatch(gotSkillsActionCreator(data))
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export const getSkillsUserHasThunkCreator = skillId => async dispatch => {
+  try {
+    const {data} = await axios.get(`/api/skills/currentSkills/${skillId}`)
+    dispatch(gotSkillsUserHasActionCreator(data.currentSkills))
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export const getSkill
