@@ -62,4 +62,14 @@ const initialState = {
 const skillsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GOT_SKILLS:
-      return {...state, allSkills: action.sk
+      return {...state, allSkills: action.skills}
+    case GOT_SKILLS_USER_HAS:
+      return {...state, skillUserHas: action.skillsHas}
+    case GOT_SKILLS_USER_WANTS:
+      return {...state, skillUserWants: action.skillsWants}
+    default:
+      return state
+  }
+}
+
+export default skillsReducer
