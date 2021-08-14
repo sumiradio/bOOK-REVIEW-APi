@@ -26,4 +26,21 @@ const updateUserAction = user => ({type: UPDATE_USER, user})
 export const me = () => async dispatch => {
   try {
     const res = await axios.get('/auth/me')
-    if (res.data
+    if (res.data.id) {
+      const {data} = await axios.get(`/api/users/${res.data.id}`)
+      dispatch(getUser({...res.data, ...data} || defaultUser))
+    } else {
+      dispatch(getUser(res.data || defaultUser))
+    }
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+export const auth = (email, password) => async dispatch => {
+  let res
+  try {
+    res = await axios.post('/auth/login', {email, password})
+  } catch (authError) {
+    return dispatch(getUser({error: authError}))
+ 
