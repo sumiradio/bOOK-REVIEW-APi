@@ -43,4 +43,33 @@ export const auth = (email, password) => async dispatch => {
     res = await axios.post('/auth/login', {email, password})
   } catch (authError) {
     return dispatch(getUser({error: authError}))
- 
+  }
+
+  try {
+    dispatch(getUser(res.data))
+    history.push('/home')
+  } catch (dispatchOrHistoryErr) {
+    console.error(dispatchOrHistoryErr)
+  }
+}
+
+export const signup = (
+  email,
+  password,
+  mentorOrMentee,
+  skills
+) => async dispatch => {
+  let res
+  try {
+    res = await axios.post('/auth/signup', {
+      email,
+      password,
+      mentorOrMentee,
+      skills
+    })
+  } catch (authError) {
+    return dispatch(getUser({error: authError}))
+  }
+
+  try {
+    dispatch(get
