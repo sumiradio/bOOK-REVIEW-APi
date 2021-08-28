@@ -72,4 +72,23 @@ export const signup = (
   }
 
   try {
-    dispatch(get
+    dispatch(getUser(res.data))
+    history.push('/home')
+  } catch (dispatchOrHistoryErr) {
+    console.error(dispatchOrHistoryErr)
+  }
+}
+
+export const updateUser = (userId, formData) => async dispatch => {
+  try {
+    const {data} = await axios.put(`/api/users/${userId}`, formData)
+    dispatch(updateUserAction(data))
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+export const logout = () => async dispatch => {
+  try {
+    await axios.post('/auth/logout')
+    dispatch(removeUse
