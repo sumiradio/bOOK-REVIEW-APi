@@ -1,0 +1,76 @@
+
+{
+  "name": "elevate",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "author": "Tal Luigi, Sam Peach, Macarena Carreno, Linda Saraguro, Jocelyn Jeriah",
+  "license": "MIT",
+  "engines": {
+    "node": "12.11.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "build-client-watch": "webpack -w",
+    "deploy": "script/deploy",
+    "heroku-token": "script/encrypt-heroku-auth-token.js",
+    "lint": "eslint ./ --ignore-path .gitignore",
+    "lint-fix": "npm run lint -- --fix",
+    "prepare": "if [ -d .git ]; then npm-merge-driver install; fi",
+    "prettify": "prettier --write \"**/*.{js,jsx,json,css,scss,md}\"",
+    "postinstall": "touch secrets.js",
+    "seed": "node script/seed.js",
+    "start": "node server",
+    "start-dev": "NODE_ENV='development' npm run build-client-watch & NODE_ENV='development' npm run start-server",
+    "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
+    "test": "NODE_ENV='test' mocha \"./server/**/*.spec.js\" \"./client/**/*.spec.js\" \"./script/**/*.spec.js\" --require @babel/polyfill --require @babel/register"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "npm run lint-fix",
+      "git add"
+    ],
+    "*.{css,scss,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "compression": "^1.7.3",
+    "connect-session-sequelize": "^6.0.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.1",
+    "history": "^4.9.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "morgan": "^1.9.1",
+    "nodemailer": "^6.4.16",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^2.0.0",
+    "pg": "^7.9.0",
+    "pg-hstore": "^2.3.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-bulma-components": "^2.3.0",
+    "react-burger-menu": "^2.6.11",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.1",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "sequelize": "5.3.1",
+    "socket.io": "^2.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "7.4.0",
+    "@babel/plugin-proposal-decorators": "7.4.0",
+    "@babel/plugin-proposal-export-namespace-from": "7.2.0",
