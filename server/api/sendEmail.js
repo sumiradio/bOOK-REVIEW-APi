@@ -30,3 +30,10 @@ router.post('/', (req, res, next) => {
     }
 
     transporter.sendMail(mailOptions, (err, info) => {
+      if (err) throw err
+      else console.log('Email sent: ', info.response)
+    })
+  } catch (err) {
+    next(err)
+  }
+})
