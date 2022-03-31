@@ -22,4 +22,34 @@ router.get('/', async (req, res, next) => {
         ]
       },
       {
-        i
+        include: [
+          {
+            model: Skill,
+            attributes: ['name']
+          }
+        ]
+      }
+    )
+    res.json(mentors)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.get('/:mentorId', async (req, res, next) => {
+  try {
+    const id = req.params.mentorId
+    const singleMentor = await Mentor.findByPk(id, {
+      include: [
+        {
+          model: Skill,
+          attributes: ['name']
+        }
+      ]
+    })
+    if (singleMentor) {
+      res.json(singleMentor)
+    } else {
+      res.sendStatus(404).json({})
+    }
+  } cat
