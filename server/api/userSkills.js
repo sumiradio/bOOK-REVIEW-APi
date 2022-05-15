@@ -52,4 +52,27 @@ router.get('/:mentorId', async (req, res, next) => {
     } else {
       res.sendStatus(404).json({})
     }
-  } cat
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.post('/mentors', async (req, res, next) => {
+  try {
+    const newMentor = await Mentor.create(req.body)
+    res.json(newMentor)
+  } catch (error) {
+    next(error)
+  }
+})
+
+router.put('/mentors/:id', async (req, res, next) => {
+  try {
+    const mentor = await Mentor.findByPk(req.params.id)
+    if (mentor) {
+      const updatedMentor = await Mentor.update(req.body, {
+        where: {id: req.params.id},
+        returning: true,
+        plain: true
+      })
+  
