@@ -75,4 +75,24 @@ router.put('/mentors/:id', async (req, res, next) => {
         returning: true,
         plain: true
       })
-  
+      res.json(updatedMentor[1])
+    } else {
+      res.sendStatus(500).json({})
+    }
+  } catch (error) {
+    next(error)
+  }
+})
+
+router.delete('/mentors/:id', async (req, res, next) => {
+  try {
+    await Mentor.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    res.sendStatus(204).json({})
+  } catch (error) {
+    next(error)
+  }
+})
