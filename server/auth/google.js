@@ -42,4 +42,30 @@ if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
         where: {googleId},
         defaults: {
           firstName,
-     
+          lastName,
+          fullName,
+          email,
+          imgUrl,
+          dateJoinedCurrentCompany
+        }
+      })
+        .then(([user]) => done(null, user))
+        .catch(done)
+    }
+  )
+
+  passport.use(strategy)
+
+  router.get(
+    '/',
+    passport.authenticate('google', {scope: ['email', 'profile']})
+  )
+
+  router.get(
+    '/callback',
+    passport.authenticate('google', {
+      successRedirect: '/home',
+      failureRedirect: '/login'
+    })
+  )
+}
