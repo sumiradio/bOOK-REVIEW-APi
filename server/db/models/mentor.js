@@ -1,8 +1,7 @@
-
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const Mentee = db.define('mentee', {
+const Mentor = db.define('mentor', {
   imgUrl: {
     type: Sequelize.STRING,
     allowNull: false
@@ -10,7 +9,7 @@ const Mentee = db.define('mentee', {
   gender: {
     type: Sequelize.STRING,
     validate: {
-      [Sequelize.Op.any]: ['Female', 'Non-binary']
+      [Sequelize.Op.any]: ['Female', 'Non-binary', 'Male']
     }
   },
   company: {
@@ -23,12 +22,4 @@ const Mentee = db.define('mentee', {
   },
   dateJoinedCompany: {
     type: Sequelize.DATE,
-    allowNull: false
-    // defaultValue: Sequelize.NOW
-  },
-  bio: {
-    type: Sequelize.TEXT
-  }
-})
-
-module.exports = Mentee
+    allowNull
