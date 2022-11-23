@@ -22,4 +22,12 @@ const Mentor = db.define('mentor', {
   },
   dateJoinedCompany: {
     type: Sequelize.DATE,
-    allowNull
+    allowNull: false
+    // defaultValue: Sequelize.NOW
+  },
+  bio: {
+    type: Sequelize.TEXT
+  }
+})
+
+module.exports = Mentor
